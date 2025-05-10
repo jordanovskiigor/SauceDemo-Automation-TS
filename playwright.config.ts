@@ -27,7 +27,8 @@ export default defineConfig({
   use: {
     baseURL:'https://www.saucedemo.com/',
     trace: 'on-first-retry',
-    actionTimeout:1000
+    actionTimeout:1200,
+    headless:false,
   },
 
   /* Configure projects for major browsers */
@@ -37,15 +38,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

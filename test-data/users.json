@@ -1,40 +1,49 @@
 [
-    {
-        "username":"standard_user",
-        "password": "secret_sauce",
-        "loginStatus": "success"   
-    }
-
-    ,
   {
+    "scenario": "valid_credentials",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "loginStatus": "success"
+  },
+  {
+    "scenario": "locked_out_user",
     "username": "locked_out_user",
     "password": "secret_sauce",
     "loginStatus": "fail",
     "errorMessage": "Epic sadface: Sorry, this user has been locked out."
   },
   {
-    "username": "problem_user",
-    "password": "secret_sauce",
-    "loginStatus": "success"
-  },
-  {
-    "username": "performance_glitch_user",
-    "password": "secret_sauce",
-    "loginStatus": "success"
-  },
-  {
-    "username": "error_user",
-    "password": "secret_sauce",
-    "loginStatus": "success"
-  },
-  {
-    "username": "visual_user",
-    "password": "secret_sauce",
-    "loginStatus": "success"
-  },
-  {
-    "username": "invalid_user",
+    "scenario": "invalid_password",
+    "username": "standard_user",
     "password": "wrong_password",
+    "loginStatus": "fail",
+    "errorMessage": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "invalid_username",
+    "username": "invalid_user",
+    "password": "secret_sauce",
+    "loginStatus": "fail",
+    "errorMessage": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "empty_username",
+    "username": "",
+    "password": "secret_sauce",
+    "loginStatus": "fail",
+    "errorMessage": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "empty_password",
+    "username": "standard_user",
+    "password": "",
+    "loginStatus": "fail",
+    "errorMessage": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "empty_username_and_password",
+    "username": "",
+    "password": "",
     "loginStatus": "fail",
     "errorMessage": "Epic sadface: Username and password do not match any user in this service"
   }
