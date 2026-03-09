@@ -4,11 +4,13 @@ export class CartPage {
   readonly page: Page;
   readonly cartItems: Locator;
   readonly cartBadge: Locator;
+  readonly checkoutButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.cartItems = this.page.locator('.cart_item');
     this.cartBadge = this.page.locator('.shopping_cart_badge');
+    this.checkoutButton = this.page.locator('[data-test="checkout"]');
   }
 
   async goto() {
@@ -28,6 +30,10 @@ export class CartPage {
 
   async removeItem(itemName: string) {
     await this.removeButtonForItem(itemName).click();
+  }
+
+  async goToCheckout() {
+    await this.checkoutButton.click();
   }
 
   async getCartBadgeCount(): Promise<number> {
